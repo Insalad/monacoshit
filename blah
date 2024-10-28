@@ -380,7 +380,7 @@
           "type": "Method",
           "description": "Returns a table containing the following information about the function:\n + source - The name of the script the function was defined in\n+ what - Where the function originates from (Lua or C/C++)\n+ func - The passed in function\n+ short_src - The name of the script in a format that can be used in error messages\n+ name - The name of the function\n+ nups - The number of upvalues in the function\nAlthough more information is given, that information is pointless since it has the same values for every function.",
           "insert": "debug.getinfo"
-      },
+      }
   },
   "drawing_library": {
       "Drawing.new": {
@@ -450,6 +450,6 @@
         "type": "Method",
         "description": "Runs dex explorer V4 Dark.",
         "insert": "salad.dex"
-    },
-},
+    }
+}
 }
