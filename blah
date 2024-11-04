@@ -445,6 +445,30 @@
         "description": "Disables Salad's internal UI.",
         "insert": "salad.disable_internal"
     },
+    "salad.enable_antilogger": {
+        "label": "salad.enable_antilogger();",
+        "type": "Method",
+        "description": "Enables Salad's Anti-Ip-Logger",
+        "insert": "salad.enable_antilogger"
+    },
+    "salad.disable_antilogger": {
+        "label": "salad.disable_antilogger();",
+        "type": "Method",
+        "description": "Disables Salad's Anti-Ip-Logger",
+        "insert": "salad.disable_antilogger"
+    },
+    "salad.enable_httpspy": {
+        "label": "salad.enable_httpspy();",
+        "type": "Method",
+        "description": "Enables Salad's HTTP Spy",
+        "insert": "salad.enable_httpspy"
+    },
+    "salad.disable_httpspy": {
+        "label": "salad.disable_httpspy();",
+        "type": "Method",
+        "description": "Disables Salad's HTTP Spy",
+        "insert": "salad.disable_httpspy"
+    },
     "salad.dex": {
         "label": "salad.dex();",
         "type": "Method",
