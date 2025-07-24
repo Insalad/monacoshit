@@ -1,479 +1,302 @@
 {
-  "global environment": {
-      "firesignal": {
-          "label": "firesignal(Signal, Args);",
-          "type": "Method",
-          "description": "Fires all the connections connected to the signal Signal with Args.",
-          "insert": "firesignal"
-      },
-      "getsenv": {
-          "label": "getsenv(localscript);",
-          "type": "Method",
-          "description": "Returns the global environment table of LocalScript script.",
-          "insert": "getsenv"
-      },
-      "checkcaller": {
-          "label": "checkcaller();",
-          "type": "Method",
-          "description": "Returns true if the current thread is a EBON thread.\nNote: Checkcaller does NOT check the call stack of the function, if you call a game function then it calls out to checkcaller, the result will be true! Be careful.",
-          "insert": "checkcaller"
-      },
-      "queue_on_teleport": {
-          "label": "queue_on_teleport(code);",
-          "type": "Method",
-          "description": "Executes code after player is teleported.",
-          "insert": "queue_on_teleport"
-      },
-    
-      "gethwid": {
-          "label": "gethwid();",
-          "type": "Method",
-          "description": "Returns the User's HWID, changes between PCs.",
-          "insert": "gethwid"
-      },
-      "message": {
-          "label": "message(text);",
-          "type": "Method",
-          "description": "Creates a message box with parameters text",
-          "insert": "message"
-      },
-      "setfflag": {
-          "label": "setfflag(FFlag, Value);",
-          "type": "Method",
-          "description": "Sets FFlag with Value. Must be run before the game loads, auto execute recommended.",
-          "insert": "setfflag"
-      },
-      "getinstances": {
-          "label": "getinstances();",
-          "type": "Method",
-          "description": "Returns a list of all instances within the game.",
-          "insert": "getinstances"
-      },
-      "getcallingscript": {
-          "label": "checkcaller();",
-          "type": "Method",
-          "description": "Gets the script that is calling this function.",
-          "insert": "getcallingscript"
-      },
-      "firetouchinterest": {
-          "label": "firetouchinterest(Part, ToTouch, Toggle);",
-          "type": "Method",
-          "description": "Fakes a .Touched event to ToTouch with Part.\nThe Toggle argument must be either 0 or 1 (for fire/un-fire).",
-          "insert": "firetouchinterest"
-      },
-      "getrenv": {
-          "label": "getrenv();",
-          "type": "Method",
-          "description": "Returns the global environment for the LocalScript state.",
-          "insert": "getrenv"
-      },
-      "newcclosure": {
-          "label": "newcclosure(lclosure);",
-          "type": "Method",
-          "description": "Takes an lclosure (Lua function) and returns a new cclosure (C function).\nThis is commonly used when setting the metamethods of a Roblox userdata such as game.",
-          "insert": "newcclosure"
-      },
-      "randomstring": {
-          "label": "randomstring(num);",
-          "type": "Method",
-          "description": "Return a random string with num length.",
-          "insert": "randomstring"
-      },
-      "request": {
-          "label": "request(options);",
-          "type": "Method",
-          "description": "Sends a http request with parameters in options.",
-          "insert": "request"
-      },
-      "readfile": {
-          "label": "readfile(file);",
-          "type": "Method",
-          "description": "Returns the content of the file. ",
-          "insert": "readfile"
-      },
-      "loadstring": {
-          "label": "loadstring(chunk, chunk_name);",
-          "type": "Method",
-          "description": "Loads chunk as a Lua function with optional chunk_name and returns it if compilation is successful.\nOtherwise, if an error has occurred during compilation, nil followed by the error message will be returned.",
-          "insert": "loadstring"
-      },
-      "setthreadcontext": {
-          "label": "setthreadcontext(level);",
-          "type": "Method",
-          "description": "Sets the current thread’s context level to level.",
-          "insert": "setthreadcontext"
-      },
-      "getthreadcontext": {
-          "label": "getthreadcontext();",
-          "type": "Method",
-          "description": "Returns the current thread’s security context level.",
-          "insert": "getthreadcontext"
-      },
-      "setthreadidentity": {
-        "label": "setthreadidentity(level);",
-        "type": "Method",
-        "description": "Sets the current thread’s level to level.",
-        "insert": "setthreadidentity"
-    },
-    "getthreadidentity": {
-        "label": "getthreadidentity();",
-        "type": "Method",
-        "description": "Returns the current thread’s security level.",
-        "insert": "getthreadidentity"
-    },
-      "mousescroll": {
-          "label": "mousescroll(px);",
-          "type": "Method",
-          "description": "Scrolls the mouse wheel virtually by px pixels.",
-          "insert": "mousescroll"
-      },
-      "hookfunction": {
-          "label": "hookfunction(old, hook);",
-          "type": "Method",
-          "description": "Hooks function old, replacing it with the function hook.\nThe old function is returned, you must use this function in order to call the original function.",
-          "insert": "hookfunction"
-      },
-      "listfiles": {
-          "label": "listfiles(folder);",
-          "type": "Method",
-          "description": "Returns a table of files in folder.",
-          "insert": "listfiles"
-      },
-      "keyrelease": {
-          "label": "keyrelease();",
-          "type": "Method",
-          "description": "Releases key on the keyboard. You can access the key values from the link below.\n https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes",
-          "insert": "keyrelease"
-      },
-      "keytap": {
-          "label": "keytap(keycode);",
-          "type": "Method",
-          "description": "Simulates a button tap for the specified keycode. Only works when roblox is focused.",
-          "insert": "keytap"
-      },
-      "rconsoleinfo": {
-          "label": "rconsoleinfo(msg);",
-          "type": "Method",
-          "description": "Prints msg into the console, with a info text before it.",
-          "insert": "rconsoleinfo"
-      },
-      "rconsolename": {
-          "label": "rconsolename(title);",
-          "type": "Method",
-          "description": "Sets the currently allocated console title to title.",
-          "insert": "rconsolename"
-      },
-      "getfpscap": {
-          "label": "getfpscap();",
-          "type": "Method",
-          "description": "Returns the fps cap.",
-          "insert": "getfpscap"
-      },
-      "mouse1release": {
-          "label": "mouse1release();",
-          "type": "Method",
-          "description": "Simulates the left mouse button being released. Commonly used after calling mouse1press().",
-          "insert": "mouse1release"
-      },
-      "getnilinstances": {
-          "label": "getnilinstances();",
-          "type": "Method",
-          "description": "Returns all the nil instances in the game.",
-          "insert": "getnilinstances"
-      },
-      "islclosure": {
-          "label": "islclosure(f);",
-          "type": "Method",
-          "description": "Returns true if f is an LClosure. Otherwise returns false.",
-          "insert": "islclosure"
-      },
-      "rconsolewarn": {
-          "label": "rconsolewarn(msg);",
-          "type": "Method",
-          "description": "Prints msg into the console, with a warning text before it.",
-          "insert": "rconsolewarn"
-      },
-      "mouse1click": {
-          "label": "mouse1click();",
-          "type": "Method",
-          "description": "Simulates the left mouse button being clicked one time.",
-          "insert": "mouse1click"
-      },
-      "mouse2press": {
-          "label": "mouse2press();",
-          "type": "Method",
-          "description": "Clicks down on the right mouse button.",
-          "insert": "mouse2press"
-      },
-      "sethiddenproperty": {
-          "label": "sethiddenproperty(Object, Property, Value);",
-          "type": "Method",
-          "description": "Sets the hidden property Property with Value from Object. Errors if the property does not exist.",
-          "insert": "sethiddenproperty"
-      },
-      "saveinstance": {
-          "label": "saveinstance();",
-          "type": "Method",
-          "description": "Saves the game as a roblox studio file, can be found in the workspace folder.",
-          "insert": "saveinstance"
-      },
-      "gethiddenproperty": {
-          "label": "gethiddenproperty(object, property);",
-          "type": "Method",
-          "description": "Returns the hidden property Property from Object. Errors if the property does not exist.",
-          "insert": "gethiddenproperty"
-      },
-      "rconsoleclear": {
-          "label": "rconsoleclear();",
-          "type": "Method",
-          "description": "Clears the console.",
-          "insert": "rconsoleclear"
-      },
-      "getgenv": {
-          "label": "getgenv();",
-          "type": "Method",
-          "description": "Returns the environment that will be applied to each script ran by salad.",
-          "insert": "getgenv"
-      },
-      "rconsoleprint": {
-          "label": "rconsoleprint();",
-          "type": "Method",
-          "description": "Prints message into the console. Does not supports colors.",
-          "insert": "rconsoleprint"
-      },
-      "rconsoleerr": {
-          "label": "rconsoleerr();",
-          "type": "Method",
-          "description": "Errors message into the console.",
-          "insert": "rconsoleerr"
-      },
-      "getgc": {
-          "label": "getgc();",
-          "type": "Method",
-          "description": "Returns a table containing Lua’s garbage collector.",
-          "insert": "getgc"
-      },
-      "mousemoverel": {
-          "label": "mousemoverel(x, y);",
-          "type": "Method",
-          "description": "Moves the mouse by x and y relative to the mouse’s current position.\nKeep in mind that a positive y value moves the mouse down.",
-          "insert": "mousemoverel"
-      },
-      "iscclosure": {
-          "label": "iscclosure(closure);",
-          "type": "Method",
-          "description": "Returns a boolean that tells you if closure is a C closure (true) or a Lua closure (false)",
-          "insert": "iscclosure"
-      },
-      "keypress": {
-          "label": "keypress(keycode);",
-          "type": "Method",
-          "description": "Continuously presses the key indicated by keycode until keyrelease is called with the same keycode.",
-          "insert": "keypress"
-      },
-      "setfpscap": {
-          "label": "setfpscap();",
-          "type": "Method",
-          "description": "Sets roblox's fps cap.",
-          "insert": "setfpscap"
-      },
-      "mouse1press": {
-          "label": "mouse1press();",
-          "type": "Method",
-          "description": "Simulates a left mouse button press without releasing it.",
-          "insert": "mouse1press"
-      },
-      "isrbxactive": {
-          "label": "isrbxactive();",
-          "type": "Method",
-          "description": "Returns true if roblox is focused, otherwise returns false.",
-          "insert": "isrbxactive"
-      },
-      "setreadonly": {
-          "label": "setreadonly(t, b);",
-          "type": "Method",
-          "description": "Sets t's readonly value to b.",
-          "insert": "setreadonly"
-      },
-      "fireclickdetector": {
-          "label": "fireclickdetector(d);",
-          "type": "Method",
-          "description": "Simulates a click on ClickDetector d.",
-          "insert": "fireclickdetector"
-      },
-      "mouse2release": {
-          "label": "mouse2release();",
-          "type": "Method",
-          "description": "Simulates the right mouse button being released. This is commonly used after calling mouse2press().",
-          "insert": "mouse2release"
-      },
-      "isreadonly": {
-          "label": "isreadonly(t);",
-          "type": "Method",
-          "description": "Returns t's read-only condition.",
-          "insert": "isreadonly"
-      },
-      "mouse2click": {
-          "label": "mouse2click();",
-          "type": "Method",
-          "description": "Simulates the right mouse button being clicked one time.",
-          "insert": "mouse2click"
-      },
-      "writefile": {
-          "label": "writefile(filename, data);",
-          "type": "Method",
-          "description": "Writes data to a file called filename in the workspace folder.\n If the file already exists, the file is overwritten. This function is restricted to the workspace folder.",
-          "insert": "writefile"
-      },
-      "getreg": {
-          "label": "getreg();",
-          "type": "Method",
-          "description": "Returns the Lua registry table.",
-          "insert": "getreg"
-      },
-      "setclipboard": {
-          "label": "setclipboard(data);",
-          "type": "Method",
-          "description": "Copies data to the clipboard.",
-          "insert": "setclipboard"
-      }
-  },
-  "debug_library": {
-      "debug": {
-          "label": "debug",
-          "type": "Class",
-          "description": "Debug Library",
-          "insert": "debug"
-      },
-      "debug.setmetatable": {
-          "label": "debug.setmetatable(val);",
-          "type": "Method",
-          "description": "Retrieve the metatable of value irregardless of value's metatable's __metatable field. Returns nil if it doesn't exist.",
-          "insert": "debug.setmetatable"
-      },
-      "debug.getmetatable": {
-          "label": "debug.getmetatable(val);",
-          "type": "Method",
-          "description": "Retrieve the metatable of value irregardless of value's metatable's __metatable field. Returns nil if it doesn't exist.",
-          "insert": "debug.getmetatable"
-      },
-      "debug.profileend": {
-          "label": "debug.profileend();",
-          "type": "Method",
-          "description": "Stops a profile created with debug.profilebegin.",
-          "insert": "debug.profileend"
-      },
-      "debug.profilebegin": {
-          "label": "debug.profilebegin(label);",
-          "type": "Method",
-          "description": "Starts a profiler under the label label.",
-          "insert": "debug.profilebegin"
-      },
-      "debug.traceback": {
-          "label": "debug.traceback(message, level);",
-          "type": "Method",
-          "description": "Returns a string with a traceback of the call stack at level (stack level 1 if not provided).\nYou can also include a message to append to the start of the traceback with the message argument.",
-          "insert": "debug.traceback"
-      },
-      "debug.getinfo": {
-          "label": "debug.getinfo(f);",
-          "type": "Method",
-          "description": "Returns a table containing the following information about the function:\n + source - The name of the script the function was defined in\n+ what - Where the function originates from (Lua or C/C++)\n+ func - The passed in function\n+ short_src - The name of the script in a format that can be used in error messages\n+ name - The name of the function\n+ nups - The number of upvalues in the function\nAlthough more information is given, that information is pointless since it has the same values for every function.",
-          "insert": "debug.getinfo"
-      }
-  },
-  "drawing_library": {
-      "Drawing.new": {
-          "label": "Drawing.new(type);",
-          "type": "Method",
-          "description": "Creates a new drawing object with type. Returns the object.",
-          "insert": "Drawing.new"
-      } 
-  },
-  "salad_library": {
-    "salad.get_player_by_name": {
-        "label": "salad.get_player_by_name(username);",
-        "type": "Method",
-        "description": "Gets a player by their display name or username.",
-        "insert": "salad.get_player_by_name"
-    },
-    "salad.get_hrp": {
-        "label": "salad.get_hrp(username);",
-        "type": "Method",
-        "description": "Gets the humanoidrootpart of a player.",
-        "insert": "salad.get_hrp"
-    },
-    "salad.remote_spy": {
-        "label": "salad.remote_spy();",
-        "type": "Method",
-        "description": "Runs a remote spy supported by salad.",
-        "insert": "salad.remote_spy"
-    },
-    "salad.teleport": {
-        "label": "salad.teleport(vector3);",
-        "type": "Method",
-        "description": "Teleports the local player to a position",
-        "insert": "salad.teleport"
-    },
-    "salad.is_player_alive": {
-        "label": "salad.is_player_alive(username);",
-        "type": "Method",
-        "description": "Checks if a player is alive.",
-        "insert": "salad.is_player_alive"
-    },
-    "salad.teleport_to_player": {
-        "label": "salad.teleport_to_player(username);",
-        "type": "Method",
-        "description": "Teleports the local player to the position of the target player.",
-        "insert": "salad.teleport_to_player"
-    },
-    "salad.get_distance": {
-        "label": "salad.get_distance(username);",
-        "type": "Method",
-        "description": "Calculates the distance between two players.",
-        "insert": "salad.get_distance"
-    },
-    "salad.enable_internal": {
-        "label": "salad.enable_internal();",
-        "type": "Method",
-        "description": "Enables Salad's internal UI.",
-        "insert": "salad.enable_internal"
-    },
-    "salad.disable_internal": {
-        "label": "salad.disable_internal();",
-        "type": "Method",
-        "description": "Disables Salad's internal UI.",
-        "insert": "salad.disable_internal"
-    },
-    "salad.enable_antilogger": {
-        "label": "salad.enable_antilogger();",
-        "type": "Method",
-        "description": "Enables Salad's Anti-Ip-Logger",
-        "insert": "salad.enable_antilogger"
-    },
-    "salad.disable_antilogger": {
-        "label": "salad.disable_antilogger();",
-        "type": "Method",
-        "description": "Disables Salad's Anti-Ip-Logger",
-        "insert": "salad.disable_antilogger"
-    },
-    "salad.enable_httpspy": {
-        "label": "salad.enable_httpspy();",
-        "type": "Method",
-        "description": "Enables Salad's HTTP Spy",
-        "insert": "salad.enable_httpspy"
-    },
-    "salad.disable_httpspy": {
-        "label": "salad.disable_httpspy();",
-        "type": "Method",
-        "description": "Disables Salad's HTTP Spy",
-        "insert": "salad.disable_httpspy"
-    },
-    "salad.dex": {
-        "label": "salad.dex();",
-        "type": "Method",
-        "description": "Runs dex explorer V4 Dark.",
-        "insert": "salad.dex"
-    }
-}
+  "global_env": [
+    {"label": "getgenv", "type": "function", "description": "Returns the global environment table", "insert": "getgenv()"},
+    {"label": "getreg", "type": "function", "description": "Returns the Lua registry table", "insert": "getreg()"},
+    {"label": "getrreg", "type": "function", "description": "Returns the real registry table", "insert": "getrreg()"},
+    {"label": "gettenv", "type": "function", "description": "Returns the thread environment", "insert": "gettenv(${1:thread})"},
+    {"label": "getrenv", "type": "function", "description": "Returns the real environment", "insert": "getrenv()"}
+  ],
+  "garbage_collection": [
+    {"label": "getgc", "type": "function", "description": "Returns all objects in garbage collection", "insert": "getgc(${1:include_tables})"},
+    {"label": "filtergc", "type": "function", "description": "Filters garbage collection objects", "insert": "filtergc(${1:filter_function}, ${2:include_tables})"}
+  ],
+  "closures": [
+    {"label": "isexecutorclosure", "type": "function", "description": "Checks if function is an executor closure", "insert": "isexecutorclosure(${1:func})"},
+    {"label": "isourclosure", "type": "function", "description": "Checks if function is our closure", "insert": "isourclosure(${1:func})"},
+    {"label": "is_sirhurt_closure", "type": "function", "description": "Checks if function is a SirHurt closure", "insert": "is_sirhurt_closure(${1:func})"},
+    {"label": "is_synapse_function", "type": "function", "description": "Checks if function is a Synapse function", "insert": "is_synapse_function(${1:func})"},
+    {"label": "is_protosmasher_closure", "type": "function", "description": "Checks if function is a ProtoSmasher closure", "insert": "is_protosmasher_closure(${1:func})"},
+    {"label": "is_salad_closure", "type": "function", "description": "Checks if function is a Salad closure", "insert": "is_salad_closure(${1:func})"},
+    {"label": "checkclosure", "type": "function", "description": "Checks closure type", "insert": "checkclosure(${1:func})"},
+    {"label": "clonefunction", "type": "function", "description": "Clones a function", "insert": "clonefunction(${1:func})"},
+    {"label": "clonefunc", "type": "function", "description": "Clones a function (alias)", "insert": "clonefunc(${1:func})"},
+    {"label": "hookfunction", "type": "function", "description": "Hooks a function", "insert": "hookfunction(${1:original}, ${2:hook})"},
+    {"label": "replaceclosure", "type": "function", "description": "Replaces a closure", "insert": "replaceclosure(${1:original}, ${2:replacement})"},
+    {"label": "restorefunction", "type": "function", "description": "Restores a hooked function", "insert": "restorefunction(${1:func})"},
+    {"label": "isfunctionhooked", "type": "function", "description": "Checks if function is hooked", "insert": "isfunctionhooked(${1:func})"},
+    {"label": "iscclosure", "type": "function", "description": "Checks if function is a C closure", "insert": "iscclosure(${1:func})"},
+    {"label": "is_c_closure", "type": "function", "description": "Checks if function is a C closure", "insert": "is_c_closure(${1:func})"},
+    {"label": "islclosure", "type": "function", "description": "Checks if function is a Lua closure", "insert": "islclosure(${1:func})"},
+    {"label": "is_l_closure", "type": "function", "description": "Checks if function is a Lua closure", "insert": "is_l_closure(${1:func})"},
+    {"label": "checkcaller", "type": "function", "description": "Checks the caller", "insert": "checkcaller()"},
+    {"label": "newcclosure", "type": "function", "description": "Creates a new C closure", "insert": "newcclosure(${1:func})"},
+    {"label": "new_c_closure", "type": "function", "description": "Creates a new C closure", "insert": "new_c_closure(${1:func})"},
+    {"label": "isnewcclosure", "type": "function", "description": "Checks if closure is a new C closure", "insert": "isnewcclosure(${1:func})"},
+    {"label": "newlclosure", "type": "function", "description": "Creates a new Lua closure", "insert": "newlclosure(${1:func})"},
+    {"label": "new_l_closure", "type": "function", "description": "Creates a new Lua closure", "insert": "new_l_closure(${1:func})"}
+  ],
+  "cache": [
+    {"label": "invalidate", "type": "function", "description": "Invalidates cache for an instance", "insert": "invalidate(${1:instance})"},
+    {"label": "iscached", "type": "function", "description": "Checks if instance is cached", "insert": "iscached(${1:instance})"},
+    {"label": "replace", "type": "function", "description": "Replaces an instance in cache", "insert": "replace(${1:original}, ${2:replacement})"},
+    {"label": "cloneref", "type": "function", "description": "Clones a reference", "insert": "cloneref(${1:instance})"},
+    {"label": "compareinstances", "type": "function", "description": "Compares two instances", "insert": "compareinstances(${1:instance1}, ${2:instance2})"},
+    {"label": "comparefunction", "type": "function", "description": "Compares two functions", "insert": "comparefunction(${1:func1}, ${2:func2})"},
+    {"label": "comparefunctions", "type": "function", "description": "Compares multiple functions", "insert": "comparefunctions(${1:func1}, ${2:func2})"}
+  ],
+  "cryptography": [
+    {"label": "encode", "type": "function", "description": "Base64 encodes a string", "insert": "encode(${1:data})"},
+    {"label": "decode", "type": "function", "description": "Base64 decodes a string", "insert": "decode(${1:encoded_data})"},
+    {"label": "base64encode", "type": "function", "description": "Base64 encodes a string", "insert": "base64encode(${1:data})"},
+    {"label": "base64decode", "type": "function", "description": "Base64 decodes a string", "insert": "base64decode(${1:encoded_data})"},
+    {"label": "base64_encode", "type": "function", "description": "Base64 encodes a string", "insert": "base64_encode(${1:data})"},
+    {"label": "base64_decode", "type": "function", "description": "Base64 decodes a string", "insert": "base64_decode(${1:encoded_data})"},
+    {"label": "encrypt", "type": "function", "description": "Encrypts data", "insert": "encrypt(${1:data}, ${2:key})"},
+    {"label": "decrypt", "type": "function", "description": "Decrypts data", "insert": "decrypt(${1:encrypted_data}, ${2:key})"},
+    {"label": "generatebytes", "type": "function", "description": "Generates random bytes", "insert": "generatebytes(${1:length})"},
+    {"label": "generatekey", "type": "function", "description": "Generates a random key", "insert": "generatekey(${1:length})"},
+    {"label": "hash", "type": "function", "description": "Hashes data", "insert": "hash(${1:data})"}
+  ],
+  "debug": [
+    {"label": "getupvalue", "type": "function", "description": "Gets upvalue from function", "insert": "getupvalue(${1:func}, ${2:index})"},
+    {"label": "getupvalues", "type": "function", "description": "Gets all upvalues from function", "insert": "getupvalues(${1:func})"},
+    {"label": "setupvalue", "type": "function", "description": "Sets upvalue in function", "insert": "setupvalue(${1:func}, ${2:index}, ${3:value})"},
+    {"label": "getconstant", "type": "function", "description": "Gets constant from function", "insert": "getconstant(${1:func}, ${2:index})"},
+    {"label": "getconstants", "type": "function", "description": "Gets all constants from function", "insert": "getconstants(${1:func})"},
+    {"label": "setconstant", "type": "function", "description": "Sets constant in function", "insert": "setconstant(${1:func}, ${2:index}, ${3:value})"},
+    {"label": "getinfo", "type": "function", "description": "Gets debug info", "insert": "getinfo(${1:func_or_level}, ${2:what})"},
+    {"label": "getstack", "type": "function", "description": "Gets stack info", "insert": "getstack(${1:level}, ${2:index})"},
+    {"label": "setstack", "type": "function", "description": "Sets stack value", "insert": "setstack(${1:level}, ${2:index}, ${3:value})"},
+    {"label": "getthreadstack", "type": "function", "description": "Gets thread stack", "insert": "getthreadstack(${1:thread}, ${2:level}, ${3:index})"},
+    {"label": "setthreadstack", "type": "function", "description": "Sets thread stack value", "insert": "setthreadstack(${1:thread}, ${2:level}, ${3:index}, ${4:value})"},
+    {"label": "getproto", "type": "function", "description": "Gets function prototype", "insert": "getproto(${1:func}, ${2:index})"},
+    {"label": "getprotos", "type": "function", "description": "Gets all function prototypes", "insert": "getprotos(${1:func})"},
+    {"label": "isvalidlevel", "type": "function", "description": "Checks if debug level is valid", "insert": "isvalidlevel(${1:level})"}
+  ],
+  "websocket": [
+    {"label": "connect", "type": "function", "description": "Connects to WebSocket", "insert": "connect(${1:url})"},
+    {"label": "Connect", "type": "function", "description": "Connects to WebSocket (capitalized)", "insert": "Connect(${1:url})"}
+  ],
+  "bit": [
+    {"label": "bdiv", "type": "function", "description": "Bitwise division", "insert": "bit.bdiv(${1:a}, ${2:b})"},
+    {"label": "arshift", "type": "function", "description": "Arithmetic right shift", "insert": "bit.arshift(${1:value}, ${2:shift})"},
+    {"label": "rshift", "type": "function", "description": "Right shift", "insert": "bit.rshift(${1:value}, ${2:shift})"},
+    {"label": "lshift", "type": "function", "description": "Left shift", "insert": "bit.lshift(${1:value}, ${2:shift})"},
+    {"label": "bswap", "type": "function", "description": "Byte swap", "insert": "bit.bswap(${1:value})"},
+    {"label": "bor", "type": "function", "description": "Bitwise OR", "insert": "bit.bor(${1:a}, ${2:b})"},
+    {"label": "bnot", "type": "function", "description": "Bitwise NOT", "insert": "bit.bnot(${1:value})"},
+    {"label": "bmul", "type": "function", "description": "Bitwise multiplication", "insert": "bit.bmul(${1:a}, ${2:b})"},
+    {"label": "bsub", "type": "function", "description": "Bitwise subtraction", "insert": "bit.bsub(${1:a}, ${2:b})"},
+    {"label": "bxor", "type": "function", "description": "Bitwise XOR", "insert": "bit.bxor(${1:a}, ${2:b})"},
+    {"label": "tobit", "type": "function", "description": "Converts to 32-bit integer", "insert": "bit.tobit(${1:value})"},
+    {"label": "ror", "type": "function", "description": "Rotate right", "insert": "bit.ror(${1:value}, ${2:shift})"},
+    {"label": "rol", "type": "function", "description": "Rotate left", "insert": "bit.rol(${1:value}, ${2:shift})"},
+    {"label": "tohex", "type": "function", "description": "Converts to hexadecimal", "insert": "bit.tohex(${1:value})"},
+    {"label": "band", "type": "function", "description": "Bitwise AND", "insert": "bit.band(${1:a}, ${2:b})"},
+    {"label": "badd", "type": "function", "description": "Bitwise addition", "insert": "bit.badd(${1:a}, ${2:b})"}
+  ],
+  "string": [
+    {"label": "trim", "type": "function", "description": "Trims whitespace from string", "insert": "string.trim(${1:str})"}
+  ],
+  "logger": [
+    {"label": "Log", "type": "function", "description": "Logs a message", "insert": "Log(${1:message})"}
+  ],
+  "actors": [
+    {"label": "isparallel", "type": "function", "description": "Checks if running in parallel", "insert": "isparallel()"},
+    {"label": "checkparallel", "type": "function", "description": "Checks parallel state", "insert": "checkparallel()"},
+    {"label": "getactorthreads", "type": "function", "description": "Gets actor threads", "insert": "getactorthreads()"},
+    {"label": "getactorstates", "type": "function", "description": "Gets actor states", "insert": "getactorstates()"},
+    {"label": "getactorthread", "type": "function", "description": "Gets specific actor thread", "insert": "getactorthread(${1:actor})"},
+    {"label": "getactorstate", "type": "function", "description": "Gets specific actor state", "insert": "getactorstate(${1:actor})"},
+    {"label": "runonactor", "type": "function", "description": "Runs function on actor", "insert": "runonactor(${1:actor}, ${2:func})"},
+    {"label": "run_on_actor", "type": "function", "description": "Runs function on actor", "insert": "run_on_actor(${1:actor}, ${2:func})"},
+    {"label": "run_on_thread", "type": "function", "description": "Runs function on thread", "insert": "run_on_thread(${1:thread}, ${2:func})"},
+    {"label": "runonthread", "type": "function", "description": "Runs function on thread", "insert": "runonthread(${1:thread}, ${2:func})"}
+  ],
+  "input": [
+    {"label": "isrbxactive", "type": "function", "description": "Checks if Roblox window is active", "insert": "isrbxactive()"},
+    {"label": "iswindowactive", "type": "function", "description": "Checks if window is active", "insert": "iswindowactive()"},
+    {"label": "isgameactive", "type": "function", "description": "Checks if game is active", "insert": "isgameactive()"},
+    {"label": "keypress", "type": "function", "description": "Simulates key press", "insert": "keypress(${1:key})"},
+    {"label": "keytap", "type": "function", "description": "Simulates key tap", "insert": "keytap(${1:key})"},
+    {"label": "keyrelease", "type": "function", "description": "Simulates key release", "insert": "keyrelease(${1:key})"},
+    {"label": "mousemoveabs", "type": "function", "description": "Moves mouse to absolute position", "insert": "mousemoveabs(${1:x}, ${2:y})"},
+    {"label": "mousemoverel", "type": "function", "description": "Moves mouse relatively", "insert": "mousemoverel(${1:x}, ${2:y})"},
+    {"label": "mousescroll", "type": "function", "description": "Scrolls mouse wheel", "insert": "mousescroll(${1:direction})"}
+  ],
+  "metatable": [
+    {"label": "getrawmetatable", "type": "function", "description": "Gets raw metatable", "insert": "getrawmetatable(${1:object})"},
+    {"label": "setnamecallmethod", "type": "function", "description": "Sets namecall method", "insert": "setnamecallmethod(${1:method})"},
+    {"label": "isreadonly", "type": "function", "description": "Checks if table is readonly", "insert": "isreadonly(${1:table})"},
+    {"label": "setrawmetatable", "type": "function", "description": "Sets raw metatable", "insert": "setrawmetatable(${1:object}, ${2:metatable})"},
+    {"label": "setreadonly", "type": "function", "description": "Sets table readonly state", "insert": "setreadonly(${1:table}, ${2:readonly})"},
+    {"label": "makewriteable", "type": "function", "description": "Makes table writeable", "insert": "makewriteable(${1:table})"},
+    {"label": "make_writeable", "type": "function", "description": "Makes table writeable", "insert": "make_writeable(${1:table})"},
+    {"label": "makereadonly", "type": "function", "description": "Makes table readonly", "insert": "makereadonly(${1:table})"},
+    {"label": "make_readonly", "type": "function", "description": "Makes table readonly", "insert": "make_readonly(${1:table})"},
+    {"label": "setuntouched", "type": "function", "description": "Sets table as untouched", "insert": "setuntouched(${1:table})"},
+    {"label": "isuntouched", "type": "function", "description": "Checks if table is untouched", "insert": "isuntouched(${1:table})"},
+    {"label": "hookmetamethod", "type": "function", "description": "Hooks a metamethod", "insert": "hookmetamethod(${1:object}, ${2:method}, ${3:hook})"},
+    {"label": "getnamecallmethod", "type": "function", "description": "Gets namecall method", "insert": "getnamecallmethod()"}
+  ],
+  "http": [
+    {"label": "httpget", "type": "function", "description": "Makes HTTP GET request", "insert": "httpget(${1:url})"},
+    {"label": "gethwid", "type": "function", "description": "Gets hardware ID", "insert": "gethwid()"},
+    {"label": "httpgetasync", "type": "function", "description": "Makes async HTTP GET request", "insert": "httpgetasync(${1:url})"},
+    {"label": "httppost", "type": "function", "description": "Makes HTTP POST request", "insert": "httppost(${1:url}, ${2:data})"},
+    {"label": "request", "type": "function", "description": "Makes HTTP request", "insert": "request(${1:options})"},
+    {"label": "http_request", "type": "function", "description": "Makes HTTP request", "insert": "http_request(${1:options})"}
+  ],
+  "scripts": [
+    {"label": "getobjects", "type": "function", "description": "Gets objects from asset", "insert": "getobjects(${1:asset_id})"},
+    {"label": "identifyexecutor", "type": "function", "description": "Identifies the executor", "insert": "identifyexecutor()"},
+    {"label": "getexecutorname", "type": "function", "description": "Gets executor name", "insert": "getexecutorname()"},
+    {"label": "queue_on_teleport", "type": "function", "description": "Queues script on teleport", "insert": "queue_on_teleport(${1:script})"},
+    {"label": "queueonteleport", "type": "function", "description": "Queues script on teleport", "insert": "queueonteleport(${1:script})"},
+    {"label": "queueontp", "type": "function", "description": "Queues script on teleport", "insert": "queueontp(${1:script})"},
+    {"label": "queue_on_tp", "type": "function", "description": "Queues script on teleport", "insert": "queue_on_tp(${1:script})"},
+    {"label": "clear_teleport_queue", "type": "function", "description": "Clears teleport queue", "insert": "clear_teleport_queue()"},
+    {"label": "clearteleportqueue", "type": "function", "description": "Clears teleport queue", "insert": "clearteleportqueue()"},
+    {"label": "cleartpqueue", "type": "function", "description": "Clears teleport queue", "insert": "cleartpqueue()"},
+    {"label": "clear_tp_queue", "type": "function", "description": "Clears teleport queue", "insert": "clear_tp_queue()"},
+    {"label": "setfps", "type": "function", "description": "Sets FPS limit", "insert": "setfps(${1:fps})"},
+    {"label": "set_fps", "type": "function", "description": "Sets FPS limit", "insert": "set_fps(${1:fps})"},
+    {"label": "setfpscap", "type": "function", "description": "Sets FPS cap", "insert": "setfpscap(${1:fps})"},
+    {"label": "set_fps_cap", "type": "function", "description": "Sets FPS cap", "insert": "set_fps_cap(${1:fps})"},
+    {"label": "getfps", "type": "function", "description": "Gets current FPS", "insert": "getfps()"},
+    {"label": "get_fps", "type": "function", "description": "Gets current FPS", "insert": "get_fps()"},
+    {"label": "getfpscap", "type": "function", "description": "Gets FPS cap", "insert": "getfpscap()"},
+    {"label": "get_fps_cap", "type": "function", "description": "Gets FPS cap", "insert": "get_fps_cap()"},
+    {"label": "getsenv", "type": "function", "description": "Gets script environment", "insert": "getsenv(${1:script})"},
+    {"label": "getmenv", "type": "function", "description": "Gets module environment", "insert": "getmenv(${1:module})"},
+    {"label": "getrunningscripts", "type": "function", "description": "Gets running scripts", "insert": "getrunningscripts()"},
+    {"label": "getscriptswiththreads", "type": "function", "description": "Gets scripts with threads", "insert": "getscriptswiththreads()"},
+    {"label": "getscriptfromthread", "type": "function", "description": "Gets script from thread", "insert": "getscriptfromthread(${1:thread})"},
+    {"label": "loadstring", "type": "function", "description": "Loads string as Lua code", "insert": "loadstring(${1:code})"},
+    {"label": "dostring", "type": "function", "description": "Executes string as Lua code", "insert": "dostring(${1:code})"},
+    {"label": "getcallingscript", "type": "function", "description": "Gets calling script", "insert": "getcallingscript()"},
+    {"label": "get_calling_script", "type": "function", "description": "Gets calling script", "insert": "get_calling_script()"},
+    {"label": "getcurrentscript", "type": "function", "description": "Gets current script", "insert": "getcurrentscript()"}
+  ],
+  "instances": [
+    {"label": "firetouchinterest", "type": "function", "description": "Fires touch interest", "insert": "firetouchinterest(${1:part}, ${2:hit}, ${3:touch_type})"},
+    {"label": "firetouch", "type": "function", "description": "Fires touch event", "insert": "firetouch(${1:part}, ${2:hit})"},
+    {"label": "fireclickdetector", "type": "function", "description": "Fires click detector", "insert": "fireclickdetector(${1:detector})"},
+    {"label": "getinstances", "type": "function", "description": "Gets instances", "insert": "getinstances()"},
+    {"label": "getnilinstances", "type": "function", "description": "Gets nil instances", "insert": "getnilinstances()"},
+    {"label": "get_instances", "type": "function", "description": "Gets instances", "insert": "get_instances()"},
+    {"label": "get_nil_instances", "type": "function", "description": "Gets nil instances", "insert": "get_nil_instances()"},
+    {"label": "GetInstances", "type": "function", "description": "Gets instances (capitalized)", "insert": "GetInstances()"},
+    {"label": "GetNilInstances", "type": "function", "description": "Gets nil instances (capitalized)", "insert": "GetNilInstances()"},
+    {"label": "getloadedmodules", "type": "function", "description": "Gets loaded modules", "insert": "getloadedmodules()"},
+    {"label": "getscriptbytecode", "type": "function", "description": "Gets script bytecode", "insert": "getscriptbytecode(${1:script})"},
+    {"label": "dumpstring", "type": "function", "description": "Dumps string", "insert": "dumpstring(${1:func})"},
+    {"label": "getcallbackvalue", "type": "function", "description": "Gets callback value", "insert": "getcallbackvalue(${1:instance}, ${2:callback})"},
+    {"label": "gethiddenproperty", "type": "function", "description": "Gets hidden property", "insert": "gethiddenproperty(${1:instance}, ${2:property})"},
+    {"label": "sethiddenproperty", "type": "function", "description": "Sets hidden property", "insert": "sethiddenproperty(${1:instance}, ${2:property}, ${3:value})"},
+    {"label": "gethiddenproperties", "type": "function", "description": "Gets all hidden properties", "insert": "gethiddenproperties(${1:instance})"},
+    {"label": "getproperties", "type": "function", "description": "Gets all properties", "insert": "getproperties(${1:instance})"},
+    {"label": "isscriptable", "type": "function", "description": "Checks if property is scriptable", "insert": "isscriptable(${1:instance}, ${2:property})"},
+    {"label": "setscriptable", "type": "function", "description": "Sets property scriptable state", "insert": "setscriptable(${1:instance}, ${2:property}, ${3:scriptable})"}
+  ],
+  "identity": [
+    {"label": "getidentity", "type": "function", "description": "Gets thread identity", "insert": "getidentity()"},
+    {"label": "getthreadidentity", "type": "function", "description": "Gets thread identity", "insert": "getthreadidentity()"},
+    {"label": "getthreadcontext", "type": "function", "description": "Gets thread context", "insert": "getthreadcontext()"},
+    {"label": "getcontext", "type": "function", "description": "Gets context", "insert": "getcontext()"},
+    {"label": "setthreadidentity", "type": "function", "description": "Sets thread identity", "insert": "setthreadidentity(${1:identity})"},
+    {"label": "set_thread_capabilities", "type": "function", "description": "Sets thread capabilities", "insert": "set_thread_capabilities(${1:capabilities})"},
+    {"label": "setthreadcapabilities", "type": "function", "description": "Sets thread capabilities", "insert": "setthreadcapabilities(${1:capabilities})"},
+    {"label": "setidentity", "type": "function", "description": "Sets identity", "insert": "setidentity(${1:identity})"},
+    {"label": "setthreadcontext", "type": "function", "description": "Sets thread context", "insert": "setthreadcontext(${1:context})"},
+    {"label": "setcontext", "type": "function", "description": "Sets context", "insert": "setcontext(${1:context})"}
+  ],
+  "signals": [
+    {"label": "getscripts", "type": "function", "description": "Gets scripts", "insert": "getscripts()"},
+    {"label": "getscriptclosure", "type": "function", "description": "Gets script closure", "insert": "getscriptclosure(${1:script})"},
+    {"label": "getconnections", "type": "function", "description": "Gets signal connections", "insert": "getconnections(${1:signal})"},
+    {"label": "firesignal", "type": "function", "description": "Fires a signal", "insert": "firesignal(${1:signal}, ${2:args})"},
+    {"label": "hooksignal", "type": "function", "description": "Hooks a signal", "insert": "hooksignal(${1:signal}, ${2:hook})"},
+    {"label": "replicatesignal", "type": "function", "description": "Replicates a signal", "insert": "replicatesignal(${1:signal})"},
+    {"label": "cansignalreplicate", "type": "function", "description": "Checks if signal can replicate", "insert": "cansignalreplicate(${1:signal})"},
+    {"label": "defersignal", "type": "function", "description": "Defers a signal", "insert": "defersignal(${1:signal})"},
+    {"label": "getscripthash", "type": "function", "description": "Gets script hash", "insert": "getscripthash(${1:script})"},
+    {"label": "getfunctionhash", "type": "function", "description": "Gets function hash", "insert": "getfunctionhash(${1:func})"},
+    {"label": "fireproximityprompt", "type": "function", "description": "Fires proximity prompt", "insert": "fireproximityprompt(${1:prompt})"}
+  ],
+  "filesystem": [
+    {"label": "appendfile", "type": "function", "description": "Appends to file", "insert": "appendfile(${1:filename}, ${2:content})"},
+    {"label": "readfile", "type": "function", "description": "Reads file content", "insert": "readfile(${1:filename})"},
+    {"label": "listfiles", "type": "function", "description": "Lists files in directory", "insert": "listfiles(${1:directory})"},
+    {"label": "writefile", "type": "function", "description": "Writes to file", "insert": "writefile(${1:filename}, ${2:content})"},
+    {"label": "makefolder", "type": "function", "description": "Creates folder", "insert": "makefolder(${1:foldername})"},
+    {"label": "isfile", "type": "function", "description": "Checks if file exists", "insert": "isfile(${1:filename})"},
+    {"label": "isfolder", "type": "function", "description": "Checks if folder exists", "insert": "isfolder(${1:foldername})"},
+    {"label": "delfile", "type": "function", "description": "Deletes file", "insert": "delfile(${1:filename})"},
+    {"label": "delfolder", "type": "function", "description": "Deletes folder", "insert": "delfolder(${1:foldername})"},
+    {"label": "loadfile", "type": "function", "description": "Loads file as Lua", "insert": "loadfile(${1:filename})"},
+    {"label": "getcustomasset", "type": "function", "description": "Gets custom asset", "insert": "getcustomasset(${1:filename})"}
+  ],
+  "clipboard": [
+    {"label": "setclipboard", "type": "function", "description": "Sets clipboard content", "insert": "setclipboard(${1:content})"},
+    {"label": "setrbxclipboard", "type": "function", "description": "Sets Roblox clipboard", "insert": "setrbxclipboard(${1:content})"},
+    {"label": "toclipboard", "type": "function", "description": "Copies to clipboard", "insert": "toclipboard(${1:content})"},
+    {"label": "write_clipboard", "type": "function", "description": "Writes to clipboard", "insert": "write_clipboard(${1:content})"},
+    {"label": "getclipboard", "type": "function", "description": "Gets clipboard content", "insert": "getclipboard()"},
+    {"label": "read_clipboard", "type": "function", "description": "Reads clipboard content", "insert": "read_clipboard()"}
+  ],
+  "rendering": [
+    {"label": "getrenderproperty", "type": "function", "description": "Gets render property", "insert": "getrenderproperty(${1:instance}, ${2:property})"},
+    {"label": "setrenderproperty", "type": "function", "description": "Sets render property", "insert": "setrenderproperty(${1:instance}, ${2:property}, ${3:value})"},
+    {"label": "getrendersteppedlist", "type": "function", "description": "Gets render stepped list", "insert": "getrendersteppedlist()"}
+  ],
+  "console": [
+    {"label": "cprint", "type": "function", "description": "Colored print", "insert": "cprint(${1:message}, ${2:color})"},
+    {"label": "customprint", "type": "function", "description": "Custom print function", "insert": "customprint(${1:message})"},
+    {"label": "rprint", "type": "function", "description": "Roblox print", "insert": "rprint(${1:message})"},
+    {"label": "robloxprint", "type": "function", "description": "Roblox print function", "insert": "robloxprint(${1:message})"},
+    {"label": "info", "type": "function", "description": "Info message", "insert": "info(${1:message})"},
+    {"label": "Info", "type": "function", "description": "Info message (capitalized)", "insert": "Info(${1:message})"},
+    {"label": "rbx_info", "type": "function", "description": "Roblox info message", "insert": "rbx_info(${1:message})"},
+    {"label": "messagebox", "type": "function", "description": "Shows message box", "insert": "messagebox(${1:message}, ${2:title})"},
+    {"label": "rconsolecreate", "type": "function", "description": "Creates remote console", "insert": "rconsolecreate()"},
+    {"label": "rconsoledestroy", "type": "function", "description": "Destroys remote console", "insert": "rconsoledestroy()"},
+    {"label": "rconsoleclear", "type": "function", "description": "Clears remote console", "insert": "rconsoleclear()"},
+    {"label": "rconsolesettitle", "type": "function", "description": "Sets remote console title", "insert": "rconsolesettitle(${1:title})"},
+    {"label": "rconsolename", "type": "function", "description": "Sets remote console name", "insert": "rconsolename(${1:name})"},
+    {"label": "rconsoleprint", "type": "function", "description": "Prints to remote console", "insert": "rconsoleprint(${1:message})"},
+    {"label": "rconsolesettextcolor", "type": "function", "description": "Sets remote console text color", "insert": "rconsolesettextcolor(${1:color})"},
+    {"label": "rconsoleinput", "type": "function", "description": "Gets remote console input", "insert": "rconsoleinput()"},
+    {"label": "rconsoleinfo", "type": "function", "description": "Remote console info", "insert": "rconsoleinfo(${1:message})"},
+    {"label": "rconsolewarn", "type": "function", "description": "Remote console warning", "insert": "rconsolewarn(${1:message})"},
+    {"label": "rconsoleerror", "type": "function", "description": "Remote console error", "insert": "rconsoleerror(${1:message})"},
+    {"label": "rconsoleerr", "type": "function", "description": "Remote console error (short)", "insert": "rconsoleerr(${1:message})"}
+  ],
+  "feature_flags": [
+    {"label": "getfflag", "type": "function", "description": "Gets feature flag", "insert": "getfflag(${1:flag})"},
+    {"label": "GetFFlag", "type": "function", "description": "Gets feature flag (capitalized)", "insert": "GetFFlag(${1:flag})"},
+    {"label": "setfflag", "type": "function", "description": "Sets feature flag", "insert": "setfflag(${1:flag}, ${2:value})"},
+    {"label": "SetFFlag", "type": "function", "description": "Sets feature flag (capitalized)", "insert": "SetFFlag(${1:flag}, ${2:value})"}
+  ],
+  "system": [
+    {"label": "isdbgpresent", "type": "function", "description": "Checks if debugger is present", "insert": "isdbgpresent()"},
+    {"label": "isdebuggerpresent", "type": "function", "description": "Checks if debugger is present", "insert": "isdebuggerpresent()"},
+    {"label": "GetModuleHandle", "type": "function", "description": "Gets module handle", "insert": "GetModuleHandle(${1:module_name})"},
+    {"label": "LoadLibraryA", "type": "function", "description": "Loads library", "insert": "LoadLibraryA(${1:library_name})"}
+  ],
+  "salad": [
+    {"label": "salad.beautify", "type": "function", "description": "Beautifies Lua code", "insert": "salad.beautify(${1:code})"},
+    {"label": "salad.disable_func", "type": "function", "description": "Disables a function", "insert": "salad.disable_func(${1:func_name})"},
+    {"label": "salad.enable_func", "type": "function", "description": "Enables a function", "insert": "salad.enable_func(${1:func_name})"},
+    {"label": "salad.is_func_disabled", "type": "function", "description": "Checks if function is disabled", "insert": "salad.is_func_disabled(${1:func_name})"},
+    {"label": "salad.get_disabled_funcs_list", "type": "function", "description": "Gets list of disabled functions", "insert": "salad.get_disabled_funcs_list()"},
+    {"label": "salad.get_disabled_funcs_count", "type": "function", "description": "Gets count of disabled functions", "insert": "salad.get_disabled_funcs_count()"},
+    {"label": "salad.clear_all_disabled_funcs", "type": "function", "description": "Clears all disabled functions", "insert": "salad.clear_all_disabled_funcs()"},
+    {"label": "salad.get_plr_by_name", "type": "function", "description": "Gets player by name", "insert": "salad.get_plr_by_name(${1:name})"},
+    {"label": "salad.get_hrp", "type": "function", "description": "Gets humanoid root part", "insert": "salad.get_hrp(${1:player})"},
+    {"label": "salad.tp", "type": "function", "description": "Teleports to position", "insert": "salad.tp(${1:position})"},
+    {"label": "salad.is_plr_alive", "type": "function", "description": "Checks if player is alive", "insert": "salad.is_plr_alive(${1:player})"},
+    {"label": "salad.tp_to_plr", "type": "function", "description": "Teleports to player", "insert": "salad.tp_to_plr(${1:player})"},
+    {"label": "salad.get_dist", "type": "function", "description": "Gets distance between positions", "insert": "salad.get_dist(${1:pos1}, ${2:pos2})"}
+  ]
 }
