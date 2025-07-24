@@ -46,13 +46,13 @@
       "label": "getsenv",
       "type": "function",
       "description": "Returns the script environment table for a given script instance.",
-      "insert": "getsenv(${1:script})"
+      "insert": "getsenv()"
     },
     "getmenv": {
       "label": "getmenv",
       "type": "function",
       "description": "Alias for getsenv(). Returns the script environment table for a given script instance.",
-      "insert": "getmenv(${1:script})"
+      "insert": "getmenv()"
     }
   },
   "garbage_collection": {
@@ -84,7 +84,7 @@
       "label": "filtergc",
       "type": "function",
       "description": "Filters garbage collector objects by type or other criteria. Returns matching objects.",
-      "insert": "filtergc(${1:filter_criteria})"
+      "insert": "filtergc()"
     }
   },
   "closures": {
@@ -92,103 +92,103 @@
       "label": "isexecutorclosure",
       "type": "function",
       "description": "Checks if a function was created by the executor (not by Roblox). Returns true for executor functions.",
-      "insert": "isexecutorclosure(${1:func})"
+      "insert": "isexecutorclosure()"
     },
     "isourclosure": {
       "label": "isourclosure",
       "type": "function",
       "description": "Alias for isexecutorclosure(). Checks if a function was created by the executor.",
-      "insert": "isourclosure(${1:func})"
+      "insert": "isourclosure()"
     },
     "is_sirhurt_closure": {
       "label": "is_sirhurt_closure",
       "type": "function",
       "description": "Alias for isexecutorclosure(). Legacy name from SirHurt executor compatibility.",
-      "insert": "is_sirhurt_closure(${1:func})"
+      "insert": "is_sirhurt_closure()"
     },
     "is_synapse_function": {
       "label": "is_synapse_function",
       "type": "function",
       "description": "Alias for isexecutorclosure(). Legacy name from Synapse X executor compatibility.",
-      "insert": "is_synapse_function(${1:func})"
+      "insert": "is_synapse_function()"
     },
     "is_protosmasher_closure": {
       "label": "is_protosmasher_closure",
       "type": "function",
       "description": "Alias for isexecutorclosure(). Legacy name from ProtoSmasher executor compatibility.",
-      "insert": "is_protosmasher_closure(${1:func})"
+      "insert": "is_protosmasher_closure()"
     },
     "is_salad_closure": {
       "label": "is_salad_closure",
       "type": "function",
       "description": "Alias for isexecutorclosure(). Checks if function was created by Salad executor.",
-      "insert": "is_salad_closure(${1:func})"
+      "insert": "is_salad_closure()"
     },
     "checkclosure": {
       "label": "checkclosure",
       "type": "function",
       "description": "Alias for isexecutorclosure(). Checks if a function was created by the executor.",
-      "insert": "checkclosure(${1:func})"
+      "insert": "checkclosure()"
     },
     "clonefunction": {
       "label": "clonefunction",
       "type": "function",
       "description": "Creates a copy of a function that can be modified independently from the original.",
-      "insert": "clonefunction(${1:func})"
+      "insert": "clonefunction()"
     },
     "clonefunc": {
       "label": "clonefunc",
       "type": "function",
       "description": "Alias for clonefunction(). Creates a copy of a function.",
-      "insert": "clonefunc(${1:func})"
+      "insert": "clonefunc()"
     },
     "hookfunction": {
       "label": "hookfunction",
       "type": "function",
       "description": "Replaces a function with a new one, returning the original function for later restoration.",
-      "insert": "hookfunction(${1:original_func}, ${2:hook_func})"
+      "insert": "hookfunction()"
     },
     "replaceclosure": {
       "label": "replaceclosure",
       "type": "function",
       "description": "Alias for hookfunction(). Replaces a function with a new implementation.",
-      "insert": "replaceclosure(${1:original_func}, ${2:replacement_func})"
+      "insert": "replaceclosure()"
     },
     "restorefunction": {
       "label": "restorefunction",
       "type": "function",
       "description": "Restores a previously hooked function to its original implementation.",
-      "insert": "restorefunction(${1:func})"
+      "insert": "restorefunction()"
     },
     "isfunctionhooked": {
       "label": "isfunctionhooked",
       "type": "function",
       "description": "Checks if a function has been hooked/replaced. Returns true if hooked.",
-      "insert": "isfunctionhooked(${1:func})"
+      "insert": "isfunctionhooked()"
     },
     "iscclosure": {
       "label": "iscclosure",
       "type": "function",
       "description": "Checks if a function is a C closure (implemented in C/C++). Returns true for C functions.",
-      "insert": "iscclosure(${1:func})"
+      "insert": "iscclosure()"
     },
     "is_c_closure": {
       "label": "is_c_closure",
       "type": "function",
       "description": "Alias for iscclosure(). Checks if a function is implemented in C/C++.",
-      "insert": "is_c_closure(${1:func})"
+      "insert": "is_c_closure()"
     },
     "islclosure": {
       "label": "islclosure",
       "type": "function",
       "description": "Checks if a function is a Lua closure (implemented in Lua). Returns true for Lua functions.",
-      "insert": "islclosure(${1:func})"
+      "insert": "islclosure()"
     },
     "is_l_closure": {
       "label": "is_l_closure",
       "type": "function",
       "description": "Alias for islclosure(). Checks if a function is implemented in Lua.",
-      "insert": "is_l_closure(${1:func})"
+      "insert": "is_l_closure()"
     },
     "checkcaller": {
       "label": "checkcaller",
@@ -200,43 +200,43 @@
       "label": "newcclosure",
       "type": "function",
       "description": "Wraps a Lua function to appear as a C closure, bypassing some detection methods.",
-      "insert": "newcclosure(${1:func})"
+      "insert": "newcclosure()"
     },
     "new_c_closure": {
       "label": "new_c_closure",
       "type": "function",
       "description": "Alias for newcclosure(). Wraps a function to appear as C closure.",
-      "insert": "new_c_closure(${1:func})"
+      "insert": "new_c_closure()"
     },
     "isnewcclosure": {
       "label": "isnewcclosure",
       "type": "function",
       "description": "Checks if a function was created using newcclosure(). Returns true for wrapped functions.",
-      "insert": "isnewcclosure(${1:func})"
+      "insert": "isnewcclosure()"
     },
     "newlclosure": {
       "label": "newlclosure",
       "type": "function",
       "description": "Creates a new Lua closure from bytecode or function data.",
-      "insert": "newlclosure(${1:bytecode})"
+      "insert": "newlclosure()"
     },
     "new_l_closure": {
       "label": "new_l_closure",
       "type": "function",
       "description": "Alias for newlclosure(). Creates a new Lua closure from bytecode.",
-      "insert": "new_l_closure(${1:bytecode})"
+      "insert": "new_l_closure()"
     },
     "loadstring": {
       "label": "loadstring",
       "type": "function",
       "description": "Compiles a string of Lua code into a function that can be executed.",
-      "insert": "loadstring(${1:code_string})"
+      "insert": "loadstring()"
     },
     "dostring": {
       "label": "dostring",
       "type": "function",
       "description": "Compiles and immediately executes a string of Lua code.",
-      "insert": "dostring(${1:code_string})"
+      "insert": "dostring()"
     }
   },
   "cache": {
@@ -244,43 +244,43 @@
       "label": "cache.invalidate",
       "type": "function",
       "description": "Removes an instance from the cache, forcing it to be recreated on next access.",
-      "insert": "cache.invalidate(${1:instance})"
+      "insert": "cache.invalidate()"
     },
     "iscached": {
       "label": "cache.iscached",
       "type": "function",
       "description": "Checks if an instance is currently stored in the cache. Returns true if cached.",
-      "insert": "cache.iscached(${1:instance})"
+      "insert": "cache.iscached()"
     },
     "replace": {
       "label": "cache.replace",
       "type": "function",
       "description": "Replaces one instance with another in the cache system.",
-      "insert": "cache.replace(${1:old_instance}, ${2:new_instance})"
+      "insert": "cache.replace()"
     },
     "cloneref": {
       "label": "cloneref",
       "type": "function",
       "description": "Creates a reference clone of an instance that bypasses some detection methods.",
-      "insert": "cloneref(${1:instance})"
+      "insert": "cloneref()"
     },
     "compareinstances": {
       "label": "compareinstances",
       "type": "function",
       "description": "Compares two instances to check if they reference the same object, even through cloneref.",
-      "insert": "compareinstances(${1:instance1}, ${2:instance2})"
+      "insert": "compareinstances()"
     },
     "comparefunction": {
       "label": "comparefunction",
       "type": "function",
       "description": "Compares two functions to check if they are the same underlying function.",
-      "insert": "comparefunction(${1:func1}, ${2:func2})"
+      "insert": "comparefunction()"
     },
     "comparefunctions": {
       "label": "comparefunctions",
       "type": "function",
       "description": "Alias for comparefunction(). Compares two functions for equality.",
-      "insert": "comparefunctions(${1:func1}, ${2:func2})"
+      "insert": "comparefunctions()"
     }
   },
   "cryptography": {
@@ -288,55 +288,55 @@
       "label": "base64encode",
       "type": "function",
       "description": "Encodes a string using Base64 encoding. Returns the encoded string.",
-      "insert": "base64encode(${1:data})"
+      "insert": "base64encode()"
     },
     "base64decode": {
       "label": "base64decode",
       "type": "function",
       "description": "Decodes a Base64 encoded string back to its original form.",
-      "insert": "base64decode(${1:encoded_data})"
+      "insert": "base64decode()"
     },
     "base64_encode": {
       "label": "base64_encode",
       "type": "function",
       "description": "Alias for base64encode(). Encodes data using Base64.",
-      "insert": "base64_encode(${1:data})"
+      "insert": "base64_encode()"
     },
     "base64_decode": {
       "label": "base64_decode",
       "type": "function",
       "description": "Alias for base64decode(). Decodes Base64 encoded data.",
-      "insert": "base64_decode(${1:encoded_data})"
+      "insert": "base64_decode()"
     },
     "encrypt": {
       "label": "encrypt",
       "type": "function",
       "description": "Encrypts data using a specified algorithm and key. Returns encrypted data.",
-      "insert": "encrypt(${1:data}, ${2:key}, ${3:algorithm})"
+      "insert": "encrypt()"
     },
     "decrypt": {
       "label": "decrypt",
       "type": "function",
       "description": "Decrypts previously encrypted data using the same key and algorithm.",
-      "insert": "decrypt(${1:encrypted_data}, ${2:key}, ${3:algorithm})"
+      "insert": "decrypt()"
     },
     "generatebytes": {
       "label": "generatebytes",
       "type": "function",
       "description": "Generates a specified number of random bytes for cryptographic use.",
-      "insert": "generatebytes(${1:count})"
+      "insert": "generatebytes()"
     },
     "generatekey": {
       "label": "generatekey",
       "type": "function",
       "description": "Generates a cryptographic key of specified length for encryption/decryption.",
-      "insert": "generatekey(${1:length})"
+      "insert": "generatekey()"
     },
     "hash": {
       "label": "hash",
       "type": "function",
       "description": "Creates a hash of the input data using a specified hashing algorithm.",
-      "insert": "hash(${1:data}, ${2:algorithm})"
+      "insert": "hash()"
     }
   },
   "debug": {
@@ -344,85 +344,85 @@
       "label": "debug.getupvalue",
       "type": "function",
       "description": "Gets the value of an upvalue at a specific index in a function's closure.",
-      "insert": "debug.getupvalue(${1:func}, ${2:index})"
+      "insert": "debug.getupvalue()"
     },
     "getupvalues": {
       "label": "debug.getupvalues",
       "type": "function",
       "description": "Returns a table containing all upvalues of a function.",
-      "insert": "debug.getupvalues(${1:func})"
+      "insert": "debug.getupvalues()"
     },
     "setupvalue": {
       "label": "debug.setupvalue",
       "type": "function",
       "description": "Sets the value of an upvalue at a specific index in a function's closure.",
-      "insert": "debug.setupvalue(${1:func}, ${2:index}, ${3:value})"
+      "insert": "debug.setupvalue()"
     },
     "getconstant": {
       "label": "debug.getconstant",
       "type": "function",
       "description": "Gets a constant value at a specific index from a function's constant table.",
-      "insert": "debug.getconstant(${1:func}, ${2:index})"
+      "insert": "debug.getconstant()"
     },
     "getconstants": {
       "label": "debug.getconstants",
       "type": "function",
       "description": "Returns a table containing all constants used by a function.",
-      "insert": "debug.getconstants(${1:func})"
+      "insert": "debug.getconstants()"
     },
     "setconstant": {
       "label": "debug.setconstant",
       "type": "function",
       "description": "Sets a constant value at a specific index in a function's constant table.",
-      "insert": "debug.setconstant(${1:func}, ${2:index}, ${3:value})"
+      "insert": "debug.setconstant()"
     },
     "getinfo": {
       "label": "debug.getinfo",
       "type": "function",
       "description": "Returns debugging information about a function or stack level.",
-      "insert": "debug.getinfo(${1:func_or_level}, ${2:what})"
+      "insert": "debug.getinfo()"
     },
     "getstack": {
       "label": "debug.getstack",
       "type": "function",
       "description": "Gets local variables and their values at a specific stack level.",
-      "insert": "debug.getstack(${1:level})"
+      "insert": "debug.getstack()"
     },
     "setstack": {
       "label": "debug.setstack",
       "type": "function",
       "description": "Sets local variable values at a specific stack level.",
-      "insert": "debug.setstack(${1:level}, ${2:index}, ${3:value})"
+      "insert": "debug.setstack()"
     },
     "getthreadstack": {
       "label": "debug.getthreadstack",
       "type": "function",
       "description": "Gets the stack information for a specific thread.",
-      "insert": "debug.getthreadstack(${1:thread}, ${2:level})"
+      "insert": "debug.getthreadstack()"
     },
     "setthreadstack": {
       "label": "debug.setthreadstack",
       "type": "function",
       "description": "Sets stack values for a specific thread at a given level.",
-      "insert": "debug.setthreadstack(${1:thread}, ${2:level}, ${3:index}, ${4:value})"
+      "insert": "debug.setthreadstack()"
     },
     "getproto": {
       "label": "debug.getproto",
       "type": "function",
       "description": "Gets a function prototype at a specific index from another function.",
-      "insert": "debug.getproto(${1:func}, ${2:index})"
+      "insert": "debug.getproto()"
     },
     "getprotos": {
       "label": "debug.getprotos",
       "type": "function",
       "description": "Returns all function prototypes contained within a function.",
-      "insert": "debug.getprotos(${1:func})"
+      "insert": "debug.getprotos()"
     },
     "isvalidlevel": {
       "label": "debug.isvalidlevel",
       "type": "function",
       "description": "Checks if a stack level is valid for debugging operations.",
-      "insert": "debug.isvalidlevel(${1:level})"
+      "insert": "debug.isvalidlevel()"
     }
   },
   "websocket": {
@@ -430,7 +430,7 @@
       "label": "WebSocket.connect",
       "type": "function",
       "description": "Creates a WebSocket connection to the specified URL. Returns a WebSocket object.",
-      "insert": "WebSocket.connect(${1:url})"
+      "insert": "WebSocket.connect()"
     }
   },
   "bit": {
@@ -438,97 +438,97 @@
       "label": "bit.bdiv",
       "type": "function",
       "description": "Performs bitwise division on two numbers.",
-      "insert": "bit.bdiv(${1:a}, ${2:b})"
+      "insert": "bit.bdiv()"
     },
     "arshift": {
       "label": "bit.arshift",
       "type": "function",
       "description": "Performs arithmetic right shift, preserving the sign bit.",
-      "insert": "bit.arshift(${1:value}, ${2:positions})"
+      "insert": "bit.arshift()"
     },
     "rshift": {
       "label": "bit.rshift",
       "type": "function",
       "description": "Performs logical right shift, filling with zeros.",
-      "insert": "bit.rshift(${1:value}, ${2:positions})"
+      "insert": "bit.rshift()"
     },
     "lshift": {
       "label": "bit.lshift",
       "type": "function",
       "description": "Performs left shift operation, shifting bits to the left.",
-      "insert": "bit.lshift(${1:value}, ${2:positions})"
+      "insert": "bit.lshift()"
     },
     "bswap": {
       "label": "bit.bswap",
       "type": "function",
       "description": "Swaps the byte order of a 32-bit value (endianness conversion).",
-      "insert": "bit.bswap(${1:value})"
+      "insert": "bit.bswap()"
     },
     "bor": {
       "label": "bit.bor",
       "type": "function",
       "description": "Performs bitwise OR operation on multiple values.",
-      "insert": "bit.bor(${1:a}, ${2:b})"
+      "insert": "bit.bor()"
     },
     "bnot": {
       "label": "bit.bnot",
       "type": "function",
       "description": "Performs bitwise NOT operation, inverting all bits.",
-      "insert": "bit.bnot(${1:value})"
+      "insert": "bit.bnot()"
     },
     "bmul": {
       "label": "bit.bmul",
       "type": "function",
       "description": "Performs bitwise multiplication on two values.",
-      "insert": "bit.bmul(${1:a}, ${2:b})"
+      "insert": "bit.bmul()"
     },
     "bsub": {
       "label": "bit.bsub",
       "type": "function",
       "description": "Performs bitwise subtraction on two values.",
-      "insert": "bit.bsub(${1:a}, ${2:b})"
+      "insert": "bit.bsub()"
     },
     "bxor": {
       "label": "bit.bxor",
       "type": "function",
       "description": "Performs bitwise XOR operation on multiple values.",
-      "insert": "bit.bxor(${1:a}, ${2:b})"
+      "insert": "bit.bxor()"
     },
     "tobit": {
       "label": "bit.tobit",
       "type": "function",
       "description": "Converts a number to a 32-bit signed integer.",
-      "insert": "bit.tobit(${1:value})"
+      "insert": "bit.tobit()"
     },
     "ror": {
       "label": "bit.ror",
       "type": "function",
       "description": "Performs rotate right operation, moving bits in a circular fashion.",
-      "insert": "bit.ror(${1:value}, ${2:positions})"
+      "insert": "bit.ror()"
     },
     "rol": {
       "label": "bit.rol",
       "type": "function",
       "description": "Performs rotate left operation, moving bits in a circular fashion.",
-      "insert": "bit.rol(${1:value}, ${2:positions})"
+      "insert": "bit.rol()"
     },
     "tohex": {
       "label": "bit.tohex",
       "type": "function",
       "description": "Converts a number to its hexadecimal string representation.",
-      "insert": "bit.tohex(${1:value}, ${2:digits})"
+      "insert": "bit.tohex()"
     },
     "band": {
       "label": "bit.band",
       "type": "function",
       "description": "Performs bitwise AND operation on multiple values.",
-      "insert": "bit.band(${1:a}, ${2:b})"
+      "insert": "bit.band()"
     },
     "badd": {
       "label": "bit.badd",
       "type": "function",
       "description": "Performs bitwise addition on two values.",
-      "insert": "bit.badd(${1:a}, ${2:b})"
+      "insert": "bit.badd()"
     }
   },
   "string_utils": {
@@ -536,7 +536,7 @@
       "label": "trim",
       "type": "function",
       "description": "Removes whitespace characters from the beginning and end of a string.",
-      "insert": "trim(${1:str})"
+      "insert": "trim()"
     }
   },
   "logger": {
@@ -544,7 +544,7 @@
       "label": "Log",
       "type": "function",
       "description": "Logs a message to the executor's logging system.",
-      "insert": "Log(${1:message})"
+      "insert": "Log()"
     }
   },
   "actors": {
@@ -576,37 +576,37 @@
       "label": "getactorthread",
       "type": "function",
       "description": "Gets the thread associated with a specific Actor.",
-      "insert": "getactorthread(${1:actor})"
+      "insert": "getactorthread()"
     },
     "getactorstate": {
       "label": "getactorstate",
       "type": "function",
       "description": "Alias for getactorthread(). Gets Actor's thread state.",
-      "insert": "getactorstate(${1:actor})"
+      "insert": "getactorstate()"
     },
     "runonactor": {
       "label": "runonactor",
       "type": "function",
       "description": "Executes code on a specific Actor's thread context.",
-      "insert": "runonactor(${1:actor}, ${2:code})"
+      "insert": "runonactor()"
     },
     "run_on_actor": {
       "label": "run_on_actor",
       "type": "function",
       "description": "Alias for runonactor(). Executes code on Actor thread.",
-      "insert": "run_on_actor(${1:actor}, ${2:code})"
+      "insert": "run_on_actor()"
     },
     "run_on_thread": {
       "label": "run_on_thread",
       "type": "function",
       "description": "Executes code on a specific thread context.",
-      "insert": "run_on_thread(${1:thread}, ${2:code})"
+      "insert": "run_on_thread()"
     },
     "runonthread": {
       "label": "runonthread",
       "type": "function",
       "description": "Alias for run_on_thread(). Executes code on thread.",
-      "insert": "runonthread(${1:thread}, ${2:code})"
+      "insert": "runonthread()"
     }
   },
   "input": {
@@ -632,19 +632,19 @@
       "label": "keypress",
       "type": "function",
       "description": "Simulates pressing and holding a keyboard key.",
-      "insert": "keypress(${1:keycode})"
+      "insert": "keypress()"
     },
     "keytap": {
       "label": "keytap",
       "type": "function",
       "description": "Simulates a quick key press and release.",
-      "insert": "keytap(${1:keycode})"
+      "insert": "keytap()"
     },
     "keyrelease": {
       "label": "keyrelease",
       "type": "function",
       "description": "Simulates releasing a previously pressed key.",
-      "insert": "keyrelease(${1:keycode})"
+      "insert": "keyrelease()"
     },
     "mouse1click": {
       "label": "mouse1click",
@@ -686,25 +686,25 @@
       "label": "mousemoveabs",
       "type": "function",
       "description": "Moves the mouse cursor to absolute screen coordinates.",
-      "insert": "mousemoveabs(${1:x}, ${2:y})"
+      "insert": "mousemoveabs()"
     },
     "mousemoverel": {
       "label": "mousemoverel",
       "type": "function",
       "description": "Moves the mouse cursor relative to its current position.",
-      "insert": "mousemoverel(${1:x_offset}, ${2:y_offset})"
+      "insert": "mousemoverel()"
     },
     "mousescroll": {
       "label": "mousescroll",
       "type": "function",
       "description": "Simulates mouse wheel scrolling with specified direction and amount.",
-      "insert": "mousescroll(${1:direction})"
+      "insert": "mousescroll()"
     },
     "messagebox": {
       "label": "messagebox",
       "type": "function",
       "description": "Displays a Windows message box with custom text and title.",
-      "insert": "messagebox(${1:text}, ${2:title}, ${3:type})"
+      "insert": "messagebox()"
     }
   },
   "metatable": {
@@ -712,19 +712,19 @@
       "label": "getrawmetatable",
       "type": "function",
       "description": "Gets the metatable of an object, bypassing __metatable protection.",
-      "insert": "getrawmetatable(${1:object})"
+      "insert": "getrawmetatable()"
     },
     "setrawmetatable": {
       "label": "setrawmetatable",
       "type": "function",
       "description": "Sets the metatable of an object, bypassing protection mechanisms.",
-      "insert": "setrawmetatable(${1:object}, ${2:metatable})"
+      "insert": "setrawmetatable()"
     },
     "setnamecallmethod": {
       "label": "setnamecallmethod",
       "type": "function",
       "description": "Sets the method name for the next namecall operation.",
-      "insert": "setnamecallmethod(${1:method_name})"
+      "insert": "setnamecallmethod()"
     },
     "getnamecallmethod": {
       "label": "getnamecallmethod",
@@ -736,55 +736,55 @@
       "label": "isreadonly",
       "type": "function",
       "description": "Checks if a table is marked as read-only.",
-      "insert": "isreadonly(${1:table})"
+      "insert": "isreadonly()"
     },
     "setreadonly": {
       "label": "setreadonly",
       "type": "function",
       "description": "Sets the read-only status of a table.",
-      "insert": "setreadonly(${1:table}, ${2:readonly})"
+      "insert": "setreadonly()"
     },
     "makewriteable": {
       "label": "makewriteable",
       "type": "function",
       "description": "Makes a read-only table writable again.",
-      "insert": "makewriteable(${1:table})"
+      "insert": "makewriteable()"
     },
     "make_writeable": {
       "label": "make_writeable",
       "type": "function",
       "description": "Alias for makewriteable(). Makes table writable.",
-      "insert": "make_writeable(${1:table})"
+      "insert": "make_writeable()"
     },
     "makereadonly": {
       "label": "makereadonly",
       "type": "function",
       "description": "Makes a table read-only to prevent modifications.",
-      "insert": "makereadonly(${1:table})"
+      "insert": "makereadonly()"
     },
     "make_readonly": {
       "label": "make_readonly",
       "type": "function",
       "description": "Alias for makereadonly(). Makes table read-only.",
-      "insert": "make_readonly(${1:table})"
+      "insert": "make_readonly()"
     },
     "setuntouched": {
       "label": "setuntouched",
       "type": "function",
       "description": "Marks a table as untouched to avoid detection.",
-      "insert": "setuntouched(${1:table})"
+      "insert": "setuntouched()"
     },
     "isuntouched": {
       "label": "isuntouched",
       "type": "function",
       "description": "Checks if a table has been marked as untouched.",
-      "insert": "isuntouched(${1:table})"
+      "insert": "isuntouched()"
     },
     "hookmetamethod": {
       "label": "hookmetamethod",
       "type": "function",
       "description": "Hooks a metamethod to intercept and modify its behavior.",
-      "insert": "hookmetamethod(${1:object}, ${2:metamethod}, ${3:hook_function})"
+      "insert": "hookmetamethod()"
     }
   },
   "http": {
@@ -792,31 +792,31 @@
       "label": "httpget",
       "type": "function",
       "description": "Performs an HTTP GET request to the specified URL and returns the response.",
-      "insert": "httpget(${1:url})"
+      "insert": "httpget()"
     },
     "httpgetasync": {
       "label": "httpgetasync",
       "type": "function",
       "description": "Alias for httpget(). Performs asynchronous HTTP GET request.",
-      "insert": "httpgetasync(${1:url})"
+      "insert": "httpgetasync()"
     },
     "httppost": {
       "label": "httppost",
       "type": "function",
       "description": "Performs an HTTP POST request with data to the specified URL.",
-      "insert": "httppost(${1:url}, ${2:data})"
+      "insert": "httppost()"
     },
     "request": {
       "label": "request",
       "type": "function",
       "description": "Performs a customizable HTTP request with full control over headers and method.",
-      "insert": "request({Url = ${1:url}, Method = ${2:method}, Headers = ${3:headers}, Body = ${4:body}})"
+      "insert": "request({Url = , Method = , Headers = , Body = })"
     },
     "http_request": {
       "label": "http_request",
       "type": "function",
       "description": "Alias for request(). Performs customizable HTTP request.",
-      "insert": "http_request({Url = ${1:url}, Method = ${2:method}})"
+      "insert": "http_request({Url = , Method = })"
     },
     "gethwid": {
       "label": "gethwid",
@@ -842,7 +842,7 @@
       "label": "getscriptfromthread",
       "type": "function",
       "description": "Gets the script instance associated with a specific thread.",
-      "insert": "getscriptfromthread(${1:thread})"
+      "insert": "getscriptfromthread()"
     },
     "getscripts": {
       "label": "getscripts",
@@ -854,19 +854,19 @@
       "label": "getscriptclosure",
       "type": "function",
       "description": "Gets the main function/closure of a script instance.",
-      "insert": "getscriptclosure(${1:script})"
+      "insert": "getscriptclosure()"
     },
     "getscriptbytecode": {
       "label": "getscriptbytecode",
       "type": "function",
       "description": "Gets the compiled bytecode of a script or function.",
-      "insert": "getscriptbytecode(${1:script_or_function})"
+      "insert": "getscriptbytecode()"
     },
     "dumpstring": {
       "label": "dumpstring",
       "type": "function",
       "description": "Alias for getscriptbytecode(). Dumps function bytecode.",
-      "insert": "dumpstring(${1:function})"
+      "insert": "dumpstring()"
     },
     "getcallingscript": {
       "label": "getcallingscript",
@@ -890,7 +890,7 @@
       "label": "getcallbackvalue",
       "type": "function",
       "description": "Gets the callback value from a connection or signal.",
-      "insert": "getcallbackvalue(${1:connection})"
+      "insert": "getcallbackvalue()"
     },
     "identifyexecutor": {
       "label": "identifyexecutor",
@@ -908,25 +908,25 @@
       "label": "setfps",
       "type": "function",
       "description": "Sets the FPS cap for the game to the specified value.",
-      "insert": "setfps(${1:fps})"
+      "insert": "setfps()"
     },
     "set_fps": {
       "label": "set_fps",
       "type": "function",
       "description": "Alias for setfps(). Sets FPS limit.",
-      "insert": "set_fps(${1:fps})"
+      "insert": "set_fps()"
     },
     "setfpscap": {
       "label": "setfpscap",
       "type": "function",
       "description": "Alias for setfps(). Sets FPS cap.",
-      "insert": "setfpscap(${1:fps})"
+      "insert": "setfpscap()"
     },
     "set_fps_cap": {
       "label": "set_fps_cap",
       "type": "function",
       "description": "Alias for setfps(). Sets FPS cap.",
-      "insert": "set_fps_cap(${1:fps})"
+      "insert": "set_fps_cap()"
     },
     "getfps": {
       "label": "getfps",
@@ -956,25 +956,25 @@
       "label": "queue_on_teleport",
       "type": "function",
       "description": "Queues code to execute when the player teleports to a new server.",
-      "insert": "queue_on_teleport(${1:code})"
+      "insert": "queue_on_teleport()"
     },
     "queueonteleport": {
       "label": "queueonteleport",
       "type": "function",
       "description": "Alias for queue_on_teleport(). Queues teleport code.",
-      "insert": "queueonteleport(${1:code})"
+      "insert": "queueonteleport()"
     },
     "queueontp": {
       "label": "queueontp",
       "type": "function",
       "description": "Alias for queue_on_teleport(). Queues teleport code.",
-      "insert": "queueontp(${1:code})"
+      "insert": "queueontp()"
     },
     "queue_on_tp": {
       "label": "queue_on_tp",
       "type": "function",
       "description": "Alias for queue_on_teleport(). Queues teleport code.",
-      "insert": "queue_on_tp(${1:code})"
+      "insert": "queue_on_tp()"
     },
     "clear_teleport_queue": {
       "label": "clear_teleport_queue",
@@ -1004,43 +1004,43 @@
       "label": "lz4compress",
       "type": "function",
       "description": "Compresses data using the LZ4 compression algorithm.",
-      "insert": "lz4compress(${1:data})"
+      "insert": "lz4compress()"
     },
     "lz4decompress": {
       "label": "lz4decompress",
       "type": "function",
       "description": "Decompresses LZ4 compressed data back to original form.",
-      "insert": "lz4decompress(${1:compressed_data})"
+      "insert": "lz4decompress()"
     },
     "firetouchinterest": {
       "label": "firetouchinterest",
       "type": "function",
       "description": "Simulates a touch event between two parts for Touched connections.",
-      "insert": "firetouchinterest(${1:part1}, ${2:part2}, ${3:touch_type})"
+      "insert": "firetouchinterest()"
     },
     "firetouch": {
       "label": "firetouch",
       "type": "function",
       "description": "Alias for firetouchinterest(). Simulates part touch.",
-      "insert": "firetouch(${1:part1}, ${2:part2})"
+      "insert": "firetouch()"
     },
     "fireclickdetector": {
       "label": "fireclickdetector",
       "type": "function",
       "description": "Simulates clicking on a ClickDetector object.",
-      "insert": "fireclickdetector(${1:click_detector})"
+      "insert": "fireclickdetector()"
     },
     "fireproximityprompt": {
       "label": "fireproximityprompt",
       "type": "function",
       "description": "Simulates triggering a ProximityPrompt object.",
-      "insert": "fireproximityprompt(${1:proximity_prompt})"
+      "insert": "fireproximityprompt()"
     },
     "getobjects": {
       "label": "getobjects",
       "type": "function",
       "description": "Loads and returns objects from a Roblox asset ID or URL.",
-      "insert": "getobjects(${1:asset_id_or_url})"
+      "insert": "getobjects()"
     },
     "isdbgpresent": {
       "label": "isdbgpresent",
@@ -1102,49 +1102,49 @@
       "label": "gethiddenproperty",
       "type": "function",
       "description": "Gets the value of a hidden or protected property on an instance.",
-      "insert": "gethiddenproperty(${1:instance}, ${2:property_name})"
+      "insert": "gethiddenproperty()"
     },
     "sethiddenproperty": {
       "label": "sethiddenproperty",
       "type": "function",
       "description": "Sets the value of a hidden or protected property on an instance.",
-      "insert": "sethiddenproperty(${1:instance}, ${2:property_name}, ${3:value})"
+      "insert": "sethiddenproperty()"
     },
     "gethiddenproperties": {
       "label": "gethiddenproperties",
       "type": "function",
       "description": "Returns a list of all hidden properties available on an instance.",
-      "insert": "gethiddenproperties(${1:instance})"
+      "insert": "gethiddenproperties()"
     },
     "getproperties": {
       "label": "getproperties",
       "type": "function",
       "description": "Returns a list of all properties (including hidden) on an instance.",
-      "insert": "getproperties(${1:instance})"
+      "insert": "getproperties()"
     },
     "isscriptable": {
       "label": "isscriptable",
       "type": "function",
       "description": "Checks if a property on an instance can be accessed via scripts.",
-      "insert": "isscriptable(${1:instance}, ${2:property_name})"
+      "insert": "isscriptable()"
     },
     "setscriptable": {
       "label": "setscriptable",
       "type": "function",
       "description": "Sets whether a property can be accessed via scripts.",
-      "insert": "setscriptable(${1:instance}, ${2:property_name}, ${3:scriptable})"
+      "insert": "setscriptable()"
     },
     "getscripthash": {
       "label": "getscripthash",
       "type": "function",
       "description": "Gets a unique hash identifier for a script instance.",
-      "insert": "getscripthash(${1:script})"
+      "insert": "getscripthash()"
     },
     "getfunctionhash": {
       "label": "getfunctionhash",
       "type": "function",
       "description": "Gets a unique hash identifier for a function.",
-      "insert": "getfunctionhash(${1:function})"
+      "insert": "getfunctionhash()"
     }
   },
   "identity": {
@@ -1176,37 +1176,37 @@
       "label": "setidentity",
       "type": "function",
       "description": "Sets the thread identity/context level. Higher levels grant more permissions.",
-      "insert": "setidentity(${1:level})"
+      "insert": "setidentity()"
     },
     "setthreadidentity": {
       "label": "setthreadidentity",
       "type": "function",
       "description": "Alias for setidentity(). Sets thread identity/context level.",
-      "insert": "setthreadidentity(${1:level})"
+      "insert": "setthreadidentity()"
     },
     "setthreadcontext": {
       "label": "setthreadcontext",
       "type": "function",
       "description": "Alias for setidentity(). Sets thread context level.",
-      "insert": "setthreadcontext(${1:level})"
+      "insert": "setthreadcontext()"
     },
     "setcontext": {
       "label": "setcontext",
       "type": "function",
       "description": "Alias for setidentity(). Sets thread context level.",
-      "insert": "setcontext(${1:level})"
+      "insert": "setcontext()"
     },
     "setthreadcapabilities": {
       "label": "setthreadcapabilities",
       "type": "function",
       "description": "Sets thread capabilities for the current thread.",
-      "insert": "setthreadcapabilities(${1:capabilities})"
+      "insert": "setthreadcapabilities()"
     },
     "set_thread_capabilities": {
       "label": "set_thread_capabilities",
       "type": "function",
       "description": "Alias for setthreadcapabilities(). Sets thread capabilities.",
-      "insert": "set_thread_capabilities(${1:capabilities})"
+      "insert": "set_thread_capabilities()"
     }
   },
   "scripts": {
@@ -1220,7 +1220,7 @@
       "label": "getscriptclosure",
       "type": "function",
       "description": "Gets the closure/function of a script instance.",
-      "insert": "getscriptclosure(${1:script})"
+      "insert": "getscriptclosure()"
     },
     "getrunningscripts": {
       "label": "getrunningscripts",
@@ -1238,7 +1238,7 @@
       "label": "getscriptfromthread",
       "type": "function",
       "description": "Gets the script instance associated with a thread.",
-      "insert": "getscriptfromthread(${1:thread})"
+      "insert": "getscriptfromthread()"
     },
     "getcallingscript": {
       "label": "getcallingscript",
@@ -1262,43 +1262,43 @@
       "label": "getscriptbytecode",
       "type": "function",
       "description": "Returns the bytecode of a script as a string.",
-      "insert": "getscriptbytecode(${1:script})"
+      "insert": "getscriptbytecode()"
     },
     "dumpstring": {
       "label": "dumpstring",
       "type": "function",
       "description": "Alias for getscriptbytecode(). Dumps script bytecode.",
-      "insert": "dumpstring(${1:script})"
+      "insert": "dumpstring()"
     },
     "getsenv": {
       "label": "getsenv",
       "type": "function",
       "description": "Gets the script environment of a script instance.",
-      "insert": "getsenv(${1:script})"
+      "insert": "getsenv()"
     },
     "getmenv": {
       "label": "getmenv",
       "type": "function",
       "description": "Alias for getsenv(). Gets script environment.",
-      "insert": "getmenv(${1:script})"
+      "insert": "getmenv()"
     },
     "getcallbackvalue": {
       "label": "getcallbackvalue",
       "type": "function",
       "description": "Gets the callback value from a script or function.",
-      "insert": "getcallbackvalue(${1:callback})"
+      "insert": "getcallbackvalue()"
     },
     "loadstring": {
       "label": "loadstring",
       "type": "function",
       "description": "Compiles a string into a Lua function.",
-      "insert": "loadstring(${1:source}, ${2:chunkname})"
+      "insert": "loadstring()"
     },
     "dostring": {
       "label": "dostring",
       "type": "function",
       "description": "Compiles and executes a Lua string immediately.",
-      "insert": "dostring(${1:source})"
+      "insert": "dostring()"
     }
   },
   "compression": {
@@ -1306,13 +1306,13 @@
       "label": "lz4compress",
       "type": "function",
       "description": "Compresses data using LZ4 compression algorithm.",
-      "insert": "lz4compress(${1:data})"
+      "insert": "lz4compress()"
     },
     "lz4decompress": {
       "label": "lz4decompress",
       "type": "function",
       "description": "Decompresses LZ4 compressed data.",
-      "insert": "lz4decompress(${1:compressed_data})"
+      "insert": "lz4decompress()"
     }
   },
   "signals": {
@@ -1320,37 +1320,37 @@
       "label": "getconnections",
       "type": "function",
       "description": "Returns all connections for a signal/event.",
-      "insert": "getconnections(${1:signal})"
+      "insert": "getconnections()"
     },
     "firesignal": {
       "label": "firesignal",
       "type": "function",
       "description": "Fires a signal with specified arguments.",
-      "insert": "firesignal(${1:signal}, ${2:...})"
+      "insert": "firesignal()"
     },
     "hooksignal": {
       "label": "hooksignal",
       "type": "function",
       "description": "Hooks into a signal to intercept or modify its behavior.",
-      "insert": "hooksignal(${1:signal}, ${2:hook_function})"
+      "insert": "hooksignal()"
     },
     "replicatesignal": {
       "label": "replicatesignal",
       "type": "function",
       "description": "Replicates a signal across the network.",
-      "insert": "replicatesignal(${1:signal})"
+      "insert": "replicatesignal()"
     },
     "cansignalreplicate": {
       "label": "cansignalreplicate",
       "type": "function",
       "description": "Checks if a signal can be replicated across network.",
-      "insert": "cansignalreplicate(${1:signal})"
+      "insert": "cansignalreplicate()"
     },
     "defersignal": {
       "label": "defersignal",
       "type": "function",
       "description": "Defers signal execution to the next frame.",
-      "insert": "defersignal(${1:signal})"
+      "insert": "defersignal()"
     }
   },
   "hashing": {
@@ -1358,13 +1358,13 @@
       "label": "getscripthash",
       "type": "function",
       "description": "Returns a hash of the script's bytecode.",
-      "insert": "getscripthash(${1:script})"
+      "insert": "getscripthash()"
     },
     "getfunctionhash": {
       "label": "getfunctionhash",
       "type": "function",
       "description": "Returns a hash of a function's bytecode.",
-      "insert": "getfunctionhash(${1:func})"
+      "insert": "getfunctionhash()"
     }
   },
   "game_events": {
@@ -1372,25 +1372,25 @@
       "label": "firetouchinterest",
       "type": "function",
       "description": "Simulates a touch event between two parts.",
-      "insert": "firetouchinterest(${1:part}, ${2:hit}, ${3:touch_type})"
+      "insert": "firetouchinterest()"
     },
     "firetouch": {
       "label": "firetouch",
       "type": "function",
       "description": "Alias for firetouchinterest(). Simulates touch event.",
-      "insert": "firetouch(${1:part}, ${2:hit}, ${3:touch_type})"
+      "insert": "firetouch()"
     },
     "fireclickdetector": {
       "label": "fireclickdetector",
       "type": "function",
       "description": "Fires a ClickDetector as if it was clicked.",
-      "insert": "fireclickdetector(${1:click_detector})"
+      "insert": "fireclickdetector()"
     },
     "fireproximityprompt": {
       "label": "fireproximityprompt",
       "type": "function",
       "description": "Triggers a ProximityPrompt as if it was activated.",
-      "insert": "fireproximityprompt(${1:proximity_prompt})"
+      "insert": "fireproximityprompt()"
     }
   },
   "performance": {
@@ -1398,25 +1398,25 @@
       "label": "setfps",
       "type": "function",
       "description": "Sets the FPS cap for the game.",
-      "insert": "setfps(${1:fps})"
+      "insert": "setfps()"
     },
     "set_fps": {
       "label": "set_fps",
       "type": "function",
       "description": "Alias for setfps(). Sets FPS cap.",
-      "insert": "set_fps(${1:fps})"
+      "insert": "set_fps()"
     },
     "setfpscap": {
       "label": "setfpscap",
       "type": "function",
       "description": "Alias for setfps(). Sets FPS cap.",
-      "insert": "setfpscap(${1:fps})"
+      "insert": "setfpscap()"
     },
     "set_fps_cap": {
       "label": "set_fps_cap",
       "type": "function",
       "description": "Alias for setfps(). Sets FPS cap.",
-      "insert": "set_fps_cap(${1:fps})"
+      "insert": "set_fps_cap()"
     },
     "getfps": {
       "label": "getfps",
@@ -1448,25 +1448,25 @@
       "label": "queue_on_teleport",
       "type": "function",
       "description": "Queues code to execute when player teleports to new server.",
-      "insert": "queue_on_teleport(${1:code})"
+      "insert": "queue_on_teleport()"
     },
     "queueonteleport": {
       "label": "queueonteleport",
       "type": "function",
       "description": "Alias for queue_on_teleport(). Queues teleport code.",
-      "insert": "queueonteleport(${1:code})"
+      "insert": "queueonteleport()"
     },
     "queueontp": {
       "label": "queueontp",
       "type": "function",
       "description": "Alias for queue_on_teleport(). Queues teleport code.",
-      "insert": "queueontp(${1:code})"
+      "insert": "queueontp()"
     },
     "queue_on_tp": {
       "label": "queue_on_tp",
       "type": "function",
       "description": "Alias for queue_on_teleport(). Queues teleport code.",
-      "insert": "queue_on_tp(${1:code})"
+      "insert": "queue_on_tp()"
     },
     "clear_teleport_queue": {
       "label": "clear_teleport_queue",
@@ -1493,7 +1493,7 @@
       "insert": "clear_tp_queue()"
     }
   },
-"salad": {
+  "salad": {
   "disable_func": {
     "label": "salad.disable_func",
     "type": "function",
